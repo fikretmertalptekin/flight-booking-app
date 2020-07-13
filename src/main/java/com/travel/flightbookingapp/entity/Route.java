@@ -2,6 +2,7 @@ package com.travel.flightbookingapp.entity;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.springframework.hateoas.server.core.Relation;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -10,6 +11,7 @@ import java.util.Objects;
 @Table(name = "routes", uniqueConstraints={
         @UniqueConstraint(columnNames = {"from_airport", "to_airport"})
 })
+@Relation(collectionRelation = "routes")
 public class Route {
 
     @Id

@@ -1,6 +1,7 @@
 package com.travel.flightbookingapp.entity;
 
 import org.hibernate.annotations.NaturalId;
+import org.springframework.hateoas.server.core.Relation;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -8,6 +9,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name= "airports")
+@Relation(collectionRelation = "airports")
 public class Airport implements Serializable {
 
     @Id

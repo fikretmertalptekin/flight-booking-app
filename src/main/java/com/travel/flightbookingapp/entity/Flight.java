@@ -3,12 +3,14 @@ package com.travel.flightbookingapp.entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.springframework.hateoas.server.core.Relation;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name= "flights")
+@Relation(collectionRelation = "flights")
 public class Flight {
 
     @Id
